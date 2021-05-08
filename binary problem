@@ -1,0 +1,48 @@
+00000110
+00010111
+
+00000110 bitwiseAND
+00010111 bitwiseOR
+00010001 bitwiseXOR
+
+0 && 0 == 0
+0 && 1 == 0
+1 && 0 == 0
+1 && 1 == 1
+
+0 || 0 == 0
+0 || 1 == 1
+1 || 0 == 1
+1 || 1 == 1
+
+0 XOR 0 == 0
+0 XOR 1 == 1
+1 XOR 0 == 1
+1 XOR 1 == 0
+
+
+a, b
+get binary of a, b
+assign variable result = empty array
+loop a using index i
+    aElement = get element from a using index i
+    bElement = get element from b using index i
+    output = parseInt(aElement) && parseInt(bElement)
+    result.push(output)
+resultStr = result.join("")
+return parseInt(resultStr, 2)
+
+function bitwiseAND (a,b){
+    let binaryA = a.toString(2).padStart(10,"0");
+    let binaryB = b.toString(2).padStart(10,"0");
+    let result = [];
+    for (let i = 0; i < binaryA.length; i++) {
+        let aElement = binaryA[i];
+        let bElement = binaryB[i];
+        let output = parseInt(aElement) && parseInt(bElement)
+        result.push(output);
+    }
+    let resultStr = result.join("");
+    return parseInt(resultStr, 2);
+}
+    
